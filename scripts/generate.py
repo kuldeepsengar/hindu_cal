@@ -47,6 +47,7 @@ def generate_calendar_for_system(system):
           "day": tithi['day'],
           "year": tithi['year'],
           "tithi": tithi['name'],
+          "paksha": tithi['paksha'],
           "date": start_date.strftime("%Y-%m-%d"),
       }
       with open(f"docs/{system}/{start_date.year}_{start_date.month}_{start_date.day}.json","w") as f:
@@ -79,7 +80,7 @@ def get_tithi(date_dt, is_purnimanta=False):
     if (tithi_num == 0):
         tithi_name = "Amavasya" if paksha == "Shukla" else "Purnima"
         paksha_icon = special_icons[tithi_name]
-    return {"name": f"{paksha_icon} {tithi_name}", "month": tithi[0]-1, "day": tithi[1], "year": tithi[2]}
+    return {"name": f"{tithi_name}", "month": tithi[0]-1, "day": tithi[1], "year": tithi[2], "paksha": paksha, "paksha_icon": paksha_icon}
 
 
 if __name__ == "__main__":
