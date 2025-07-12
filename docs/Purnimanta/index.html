@@ -28,10 +28,12 @@
 
     function renderTithi(data) {
       const icon = data.paksha_icon || '';
-      const html = `
-        <h1> ${data.month} - ${data.paksha} - ${data.tithi}</h1>
-      `;
-      document.getElementById('tithi-title').innerHTML = html;
+      const text = `${data.date}`;
+      document.getElementById('tithi-title').innerHTML = text;
+      document.getElementById('tithi-detail').innerHTML = `
+        <div class="tithi-detail"><b>Month:</b> ${data.month || ''}</div>
+        <div class="tithi-detail"><b>Tithi:</b> ${data.tithi || ''}</div>
+        <div class="tithi-detail"><b>Paksha:</b> ${data.paksha || ''}</div>`;
     }
   </script>
 </head>
@@ -42,7 +44,10 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title" id="tithi-title"> 
-            <h1>Dvitiya</h1>
+            
+          </span>
+          <span id="tithi-detail">
+            
           </span>
         </div>
         <div class="card-action" id="tithi-action">
