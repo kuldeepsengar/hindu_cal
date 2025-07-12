@@ -9,4 +9,4 @@ Requests
 setuptools
 pyswisseph
 timezonefinder
-jhora
+pyjhora
