@@ -1,0 +1,11 @@
+attr
+geocoder
+geopy
+img2pdf
+numpy
+pandas
+Pillow
+Requests
+setuptools
+pyswisseph
+timezonefinder
