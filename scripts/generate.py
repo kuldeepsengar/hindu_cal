@@ -52,6 +52,9 @@ def generate_calendar_for_system(system):
       }
       with open(f"docs/{system}/{start_date.year}_{start_date.month}_{start_date.day}.json","w") as f:
           json.dump(data, f, indent=2)  
+      
+      with open(f"docs/{system}/today.json","w") as f:
+          json.dump(data, f, indent=2)  
     
 
 def get_tithi(date_dt, is_purnimanta=False):
